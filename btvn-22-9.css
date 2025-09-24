@@ -38,15 +38,42 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;             
 }
 
-header{
-    background:linear-gradient(180deg,var(--color-primary-dark),var(--color-primary-medium));
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:40;
-    box-shadow:0 6px 18px rgba(11,58,140,0.12)
+header {
+    background: linear-gradient(180deg, var(--color-primary-dark), var(--color-primary-medium));
+    color: white;
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, var(--color-primary-dark), var(--color-primary-medium));
+    box-shadow: 0 4px 20px rgba(11,58,140,0.3);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+}
+.sticky-header.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
+.sticky-header .topbar {
+    padding: 8px 24px;
+}
+
+.sticky-header .logo {
+    font-size: 14px;
+}
+
+.sticky-header .logo .mark {
+    width: 36px;
+    height: 36px;
+}
 button, .btn, .tag {
   font-weight: 500;
   letter-spacing: 0.02em;

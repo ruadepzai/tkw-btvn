@@ -11,17 +11,40 @@
 </head>
 <body>
     <header>
+        <div class="sticky-header" id="stickyHeader">
+            <div class="container topbar">
+                <div class="logo" id="stickyLogo" style="cursor:pointer">
+                    <div class="mark">
+                        <img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+                    </div>
+                    <div>
+                        <div class="small">Trung tâm</div>
+                        <div class="brand">Sena Chill</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" data-view="home" class="nav-link">Trang chủ</a></li>
+                        <li><a href="#courses" data-view="courses" class="nav-link">Khóa học</a></li>
+                        <li><a href="#about" data-view="about" class="nav-link">Giới thiệu</a></li>
+                        <li><a href="#contact" data-view="contact" class="nav-link">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <button class="btn-ghost" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
+            </div>
+        </div>
+
+
         <div class="container topbar">
-            <div class="logo" id="logo" style="cursor:pointer">
-                <div class="mark"><img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+            <div class="logo" id="mainLogo" style="cursor:pointer">
+                <div class="mark">
+                    <img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
                 </div>
                 <div>
                     <div class="small">Trung tâm</div>
                     <div class="brand">Sena Chill</div>
                 </div>
             </div>
-
-
             <nav>
                 <ul>
                     <li><a href="#home" data-view="home" class="nav-link">Trang chủ</a></li>
@@ -30,13 +53,8 @@
                     <li><a href="#contact" data-view="contact" class="nav-link">Liên hệ</a></li>
                 </ul>
             </nav>
-
-
-            <div style="display:flex;gap:12px;align-items:center">
-                <button class="btn-ghost" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
-            </div>
+            <button class="btn-ghost" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
         </div>
-
 
 <!-- HERO -->
         <div class="container hero">

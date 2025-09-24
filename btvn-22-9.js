@@ -68,6 +68,9 @@ function init(){
     el('#logo')?.addEventListener('click', () => {
         navigateTo('home');
     });
+    el('#stickyLogo')?.addEventListener('click', () => {
+        navigateTo('home');
+    });
 
     // nav
     els('[data-view]').forEach(elm=>elm.addEventListener('click', (e)=>{
@@ -119,3 +122,17 @@ function navigateTo(view){
 
 // initial load
 window.addEventListener('DOMContentLoaded', ()=>{init(); navigateTo('home');});
+
+window.addEventListener('scroll', function() {
+    const stickyHeader = document.getElementById('stickyHeader');
+    const originalHeader = document.querySelector('header');
+    const scrollY = window.scrollY;
+    const headerHeight = originalHeader.offsetHeight;
+    
+    // Hiển thị sticky header sau khi cuộn qua 80% chiều cao header gốc
+    if (scrollY > headerHeight * 0.8) {
+        stickyHeader.classList.add('show');
+    } else {
+        stickyHeader.classList.remove('show');
+    }
+});
