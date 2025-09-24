@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trung tâm Tiếng Anh — Mẫu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="btvn-22-9.css">
+</head>
+<body>
+    <header>
+        <div class="container topbar">
+            <div class="logo" id="logo" style="cursor:pointer">
+                <div class="mark"><img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+                </div>
+                <div>
+                    <div class="small">Trung tâm</div>
+                    <div class="brand">Sena Chill</div>
+                </div>
+            </div>
+
+
+            <nav>
+                <ul>
+                    <li><a href="#home" data-view="home" class="nav-link">Trang chủ</a></li>
+                    <li><a href="#courses" data-view="courses" class="nav-link">Khóa học</a></li>
+                    <li><a href="#about" data-view="about" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="#contact" data-view="contact" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+
+            <div style="display:flex;gap:12px;align-items:center">
+                <button class="btn-ghost" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
+            </div>
+        </div>
+
+
+<!-- HERO -->
+        <div class="container hero">
+            <div class="hero-inner">
+                <div>
+                    <h1>Giao tiếp tự tin — mở rộng cơ hội</h1>
+                    <p>Khóa học giao tiếp tiếng Anh thực tế, luyện nói theo tình huống, trợ giúp giáo viên bản ngữ và lộ trình rõ ràng cho mọi cấp độ.</p>
+                    <div class="hero-cta">
+                        <button class="btn-primary" data-view="courses">Xem khóa học</button>
+                        <button class="btn-outline" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
+                    </div>
+
+
+                    <div class="stats">
+                        <div class="stat">+3,600 Học viên</div>
+                        <div class="stat">360+ Khóa học</div>
+                    </div>
+                </div>
+
+
+                <div class="hero-card">
+                    <div class="hero-card-head">
+                        <div class="title">Khóa học nổi bật</div>
+                        <div class="muted">Mở lớp sắp tới</div>
+                    </div>
+                    <div class="hero-list">
+                        <div class="hero-item">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="" />
+                            <div>
+                                <div class="muted">Giao tiếp cơ bản</div>
+                                <div class="tiny">Khai giảng: 10/10/2025</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-item">
+                            <img src="https://i.pinimg.com/736x/6b/a8/1f/6ba81fe6f5f308568f4c926d27b36192.jpg" alt="" />
+                            <div>
+                                <div class="muted">Luyện phát âm</div>
+                                <div class="tiny">Khai giảng: 20/10/2025</div>
+                            </div>
+                        </div>
+
+
+                        <button class="btn-primary" data-view="courses">Xem tất cả khóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
+
+<main class="container" id="app">
+
+<!home>
+    <section id="view-home" class="view">
+        <div class="section-head">
+            <h2>Khóa mới mở</h2>
+            <div><a href="#courses" data-view="courses" class="link-inline">Xem tất cả →</a></div>
+        </div>
+        <div class="grid" id="newGrid"></div>
+
+        <div class="section-head" style="margin-top:40px">
+            <h2>Khóa học hot</h2>
+            <div class="muted">Những khóa được đánh giá cao</div>
+        </div>
+        <div class="grid" id="hotGrid"></div>
+    </section>
+
+<!courses>
+    <section id="view-courses" class="view" style="display:none">
+        <div class="section-head">
+            <h2>Danh mục: Tiếng Anh giao tiếp</h2>
+            <div class="filters">
+                <button class="chip" data-filter="all">Tất cả</button>
+                <button class="chip" data-filter="basic">Cơ bản</button>
+                <button class="chip" data-filter="intermediate">Trung cấp</button>
+                <button class="chip" data-filter="advanced">Nâng cao</button>
+                <button class="chip" data-filter="online">Online</button>
+            </div>
+        </div>
+        <div class="grid" id="coursesGrid"></div>
+    </section>
+
+<!detail>
+    <section id="view-detail" class="view" style="display:none">
+        <div class="section-head"><button class="link-ghost" id="backBtn">← Quay lại</button><h2 id="detail-title">Chi tiết khóa</h2></div>
+        <div class="detail">
+            <div>
+                <div class="card detail-main">
+                    <img id="detail-image" src="" alt="Ảnh khóa học">
+                    <h3 id="detail-name"></h3>
+                    <p id="detail-desc" class="muted"></p>
+                    <ul class="meta-list">
+                        <li><strong>Khai giảng:</strong> <span id="detail-start"></span></li>
+                        <li><strong>Thời lượng:</strong> <span id="detail-duration"></span></li>
+                        <li><strong>Trình độ:</strong> <span id="detail-level"></span></li>
+                    </ul>
+                </div>
+
+
+                <div class="card">
+                    <h4>Nội dung chính</h4>
+                    <div id="detail-curriculum"></div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="card">
+                    <h4>Đăng ký</h4>
+                    <p class="muted">Đặt chỗ nhanh — nhận tư vấn lộ trình miễn phí</p>
+                    <div style="margin-top:12px">
+                        <button class="btn-primary" id="enrollBtn">Đăng ký ngay</button>
+                    </div>
+                </div>
+
+                <div class="card contact-card">
+                    <h4>Thông tin liên hệ</h4>
+                    <p class="muted">Hotline: 0123 456 789<br>Địa chỉ: Hà Nội</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="view-about" class="view" style="display:none">
+        <h2>Giới thiệu</h2>
+        <p class="muted">Mẫu trang giới thiệu ngắn. Thêm nội dung sau.</p>
+    </section>
+
+
+    <section id="view-contact" class="view" style="display:none">
+        <h2>Liên hệ</h2>
+        <p class="muted">Form liên hệ / thông tin - thêm theo yêu cầu.</p>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>
+            <div class="brand">English Center</div>
+            <div class="muted small">© 2025 Trung tâm Tiếng Anh. All rights reserved.</div>
+        </div>
+        <div class="muted small">Theo dõi chúng tôi: Facebook • Instagram</div>
+    </div>
+</footer>
+
+<script src="btvn-22-9.js"></script>
+</body>
+</html>
