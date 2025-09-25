@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Liên hệ - Trung tâm Tiếng Anh Sena Chill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container topbar">
+            <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+                <div class="mark">
+                    <img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+                </div>
+                <div>
+                    <div class="small">Trung tâm</div>
+                    <div class="brand">Sena Chill</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="courses.html" class="nav-link">Khóa học</a></li>
+                    <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="contact.html" class="nav-link active">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="btn-ghost" onclick="window.location.href='contact.html'">Đăng ký thử</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="padding-top: 40px;">
+            <div class="section-head">
+                <h2>Liên hệ với chúng tôi</h2>
+            </div>
+            
+            <div class="detail">
+                <div>
+                    <div class="card">
+                        <h3>Gửi yêu cầu tư vấn</h3>
+                        <form id="contactForm" style="margin-top: 20px;">
+                            <div style="margin-bottom: 20px;">
+                                <label for="fullName" style="display: block; margin-bottom: 8px; font-weight: 600;">Họ và tên *</label>
+                                <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 600;">Số điện thoại *</label>
+                                <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 600;">Email *</label>
+                                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label for="course" style="display: block; margin-bottom: 8px; font-weight: 600;">Khóa học quan tâm *</label>
+                                <select id="course" name="course" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                                    <option value="">-- Chọn khóa học --</option>
+                                    <option value="basic">Giao tiếp cơ bản</option>
+                                    <option value="intermediate">Giao tiếp trung cấp</option>
+                                    <option value="pronunciation">Luyện phát âm</option>
+                                    <option value="business">Giao tiếp thương mại</option>
+                                    <option value="ielts">Luyện thi IELTS Speaking</option>
+                                </select>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label for="message" style="display: block; margin-bottom: 8px; font-weight: 600;">Tin nhắn</label>
+                                <textarea id="message" name="message" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" placeholder="Chia sẻ mục tiêu học tập của bạn..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary" style="width: 100%;">Gửi yêu cầu tư vấn</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <aside>
+                    <div class="card">
+                        <h4>Thông tin liên hệ</h4>
+                        <div style="margin-top: 20px;">
+                            <div class="contact">
+                                <strong>📍</strong>
+                                <div>
+                                    <div><strong>Địa chỉ:</strong></div>
+                                    <div class="muted">120 Yên Lãng, Láng Hạ, Hà Nội</div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact">
+                                <strong>📞</strong>
+                                <div>
+                                    <div><strong>Hotline:</strong></div>
+                                    <div class="muted">0123 456 789</div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact">
+                                <strong>✉️</strong>
+                                <div>
+                                    <div><strong>Email:</strong></div>
+                                    <div class="muted">Lampink@senachill.edu.vn</div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact">
+                                <strong>🕐</strong>
+                                <div>
+                                    <div><strong>Giờ làm việc:</strong></div>
+                                    <div class="muted">
+                                        Thứ 2 - Thứ 6: 8:00 - 21:00<br>
+                                        Thứ 7 - CN: 8:00 - 17:00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Đăng ký học thử miễn phí</h4>
+                        <p class="muted">Trải nghiệm phương pháp học độc đáo của chúng tôi hoàn toàn miễn phí!</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 16px;" onclick="alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ sớm nhất.')">Đăng ký ngay</button>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Kết nối với chúng tôi</h4>
+                        <div style="margin-top: 16px;">
+                            <div style="margin-bottom: 12px;">
+                                <a href="#" class="link-inline">Facebook: SenaChillEnglish</a>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <a href="#" class="link-inline">Instagram: @senachill_english</a>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <a href="#" class="link-inline">YouTube: Sena Chill English</a>
+                            </div>
+                            <div>
+                                <a href="#" class="link-inline">Zalo: 0123456789</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <div class="card" style="margin-top: 30px;">
+                <h3>Bản đồ địa chỉ</h3>
+                <div style="margin-top: 20px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6515988031147!2d105.81394731533457!3d21.014682893671244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece1c0b%3A0x4e5c5b8c5e5c5b8c!2zMTIwIFnDqm4gTMOjbmcsIExhbmcgSGEsIEhhIE5vaQ!5e0!3m2!1svi!2svn!4v1635123456789!5m2!1svi!2svn"
+                        width="100%" 
+                        height="300" 
+                        style="border: 0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <p class="muted" style="font-size: 12px;">120 Yên Lãng, Láng Hạ, Hà Nội</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="brand">English Center</div>
+                <div class="muted small">© 2025 Trung tâm Tiếng Anh. All rights reserved.</div>
+            </div>
+            <div class="muted small">Theo dõi chúng tôi: Facebook • Instagram</div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

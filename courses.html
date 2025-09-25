@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Khóa học - Trung tâm Tiếng Anh Sena Chill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container topbar">
+            <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+                <div class="mark">
+                    <img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+                </div>
+                <div>
+                    <div class="small">Trung tâm</div>
+                    <div class="brand">Sena Chill</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="courses.html" class="nav-link active">Khóa học</a></li>
+                    <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="btn-ghost" onclick="window.location.href='contact.html'">Đăng ký thử</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="padding-top: 40px;">
+            <div class="section-head">
+                <h2>Danh mục: Tiếng Anh giao tiếp</h2>
+                <div class="filters">
+                    <button class="chip active" data-filter="all">Tất cả</button>
+                    <button class="chip" data-filter="basic">Cơ bản</button>
+                    <button class="chip" data-filter="intermediate">Trung cấp</button>
+                    <button class="chip" data-filter="advanced">Nâng cao</button>
+                    <button class="chip" data-filter="online">Online</button>
+                </div>
+            </div>
+            <div class="grid" id="coursesGrid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="brand">English Center</div>
+                <div class="muted small">© 2025 Trung tâm Tiếng Anh. All rights reserved.</div>
+            </div>
+            <div class="muted small">Theo dõi chúng tôi: Facebook • Instagram</div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

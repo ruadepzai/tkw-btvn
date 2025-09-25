@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chi tiết khóa học - Trung tâm Tiếng Anh Sena Chill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container topbar">
+            <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+                <div class="mark">
+                    <img src="https://i.redd.it/ngwcxojkdrtc1.jpeg" alt="Logo" style="width: 30px; height: 30px;">
+                </div>
+                <div>
+                    <div class="small">Trung tâm</div>
+                    <div class="brand">Sena Chill</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="courses.html" class="nav-link active">Khóa học</a></li>
+                    <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="btn-ghost" onclick="alert('Vui lòng đăng nhập')">Đăng ký thử</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="padding-top: 40px;">
+            <div class="section-head">
+                <button class="link-ghost" onclick="window.history.back()">← Quay lại</button>
+                <h2 id="detail-title">Chi tiết khóa học</h2>
+            </div>
+            <div class="detail">
+                <div>
+                    <div class="card detail-main">
+                        <img id="detail-image" src="" alt="Ảnh khóa học">
+                        <h3 id="detail-name"></h3>
+                        <p id="detail-desc" class="muted"></p>
+                        <ul class="meta-list">
+                            <li><strong>Khai giảng:</strong> <span id="detail-start"></span></li>
+                            <li><strong>Thời lượng:</strong> <span id="detail-duration"></span></li>
+                            <li><strong>Trình độ:</strong> <span id="detail-level"></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Nội dung chính</h4>
+                        <div id="detail-curriculum"></div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="card">
+                        <h4>Đăng ký</h4>
+                        <p class="muted">Đặt chỗ nhanh — nhận tư vấn lộ trình miễn phí</p>
+                        <div style="margin-top:12px">
+                            <button class="btn-primary" id="enrollBtn">Đăng ký ngay</button>
+                        </div>
+                    </div>
+
+                    <div class="card contact-card">
+                        <h4>Thông tin liên hệ</h4>
+                        <p class="muted">Hotline: 0123 456 789<br>Địa chỉ: Hà Nội</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="brand">English Center</div>
+                <div class="muted small">© 2025 Trung tâm Tiếng Anh. All rights reserved.</div>
+            </div>
+            <div class="muted small">Theo dõi chúng tôi: Facebook • Instagram</div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
