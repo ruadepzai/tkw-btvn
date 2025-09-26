@@ -125,6 +125,24 @@ function loadCourseDetail() {
     document.title = `${course.name} - Trung tâm Tiếng Anh Sena Chill`;
 }
 
+// Navigate to contact page with course enrollment
+function enrollInCourse(courseId = null) {
+    // Store course info for contact page
+    if (courseId || currentCourse) {
+        const course = courseId ? courses.find(c => c.id === courseId) : currentCourse;
+        if (course) {
+            localStorage.setItem('enrollmentCourse', JSON.stringify({
+                id: course.id,
+                name: course.name,
+                start: course.start
+            }));
+        }
+    }
+    
+    // Navigate to contact page
+    window.location.href = 'contact.html';
+}
+
 // Initialize page based on current page
 function initializePage() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -164,13 +182,11 @@ function initializePage() {
             // Course detail page initialization
             loadCourseDetail();
             
-            // Add enroll button functionality
+            // Add enroll button functionality - THAY ĐỔI TẠI ĐÂY
             const enrollBtn = el('#enrollBtn');
             if (enrollBtn) {
                 enrollBtn.addEventListener('click', () => {
-                    if (currentCourse) {
-                        alert('Đăng ký khóa học: ' + currentCourse.name + '\nChúng tôi sẽ liên hệ với bạn sớm nhất!');
-                    }
+                    enrollInCourse();
                 });
             }
             break;
@@ -180,23 +196,84 @@ function initializePage() {
             break;
             
         case 'contact.html':
-                const contactForm = el('#contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Contact page initialization
+            initContactPage();
+            
+            const contactForm = el('#contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
 
-            // Nếu form không hợp lệ thì dừng
-            if (!contactForm.checkValidity()) {
-                contactForm.reportValidity(); // Hiện tooltip mặc định của browser
-                return;
+                    // Nếu form không hợp lệ thì dừng
+                    if (!contactForm.checkValidity()) {
+                        contactForm.reportValidity(); // Hiện tooltip mặc định của browser
+                        return;
+                    }
+
+                    // Thành công
+                    alert('Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn trong 24h.');
+                    contactForm.reset();
+                    
+                    // Clear enrollment course data and remove notification
+                    localStorage.removeItem('enrollmentCourse');
+                    
+                    // Remove the enrollment notification
+                    const notification = document.querySelector('.enrollment-notification');
+                    if (notification) {
+                        notification.remove();
+                    }
+                });
             }
-
-            // Thành công
-            alert('Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn trong 24h.');
-            contactForm.reset();
-        });
-    }
             break;
+    }
+}
+
+// Initialize contact page with enrollment data
+function initContactPage() {
+    const enrollmentData = localStorage.getItem('enrollmentCourse');
+    if (enrollmentData) {
+        try {
+            const course = JSON.parse(enrollmentData);
+            
+            // Pre-fill course selection if there's a course select field
+            const courseSelect = el('#course');
+            if (courseSelect) {
+                // Find and select the course option
+                const options = courseSelect.querySelectorAll('option');
+                options.forEach(option => {
+                    if (option.value === course.id || option.textContent.includes(course.name)) {
+                        option.selected = true;
+                    }
+                });
+            }
+            
+            // Or pre-fill a message field if exists
+            const messageField = el('#message') || el('textarea[name="message"]');
+            if (messageField && !messageField.value.trim()) {
+                messageField.value = `Tôi muốn đăng ký khóa học: ${course.name}\nKhai giảng: ${course.start}`;
+            }
+            
+            // Show a notification
+            const notification = document.createElement('div');
+            notification.className = 'enrollment-notification'; // Add class for easy removal
+            notification.style.cssText = `
+                background: #dbeafe;
+                color: #1e40af;
+                padding: 12px 16px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                border-left: 4px solid #2563eb;
+            `;
+            notification.innerHTML = `📚 Bạn đang đăng ký khóa học: <strong>${course.name}</strong>`;
+            
+            const form = el('#contactForm') || el('form');
+            if (form) {
+                form.insertBefore(notification, form.firstChild);
+            }
+            
+        } catch (e) {
+            console.warn('Could not parse enrollment data:', e);
+        }
     }
 }
 
@@ -379,8 +456,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add loading states to buttons
     els('.btn-primary, .btn-ghost').forEach(btn => {
-        // Skip contact form submit button
-        if(btn.closett('#contactForm')) return;
+        // Skip contact form submit button and enroll button
+        if(btn.closest('#contactForm') || btn.id === 'enrollBtn') return;
 
         btn.addEventListener('click', function(e) {
             // Add loading state
@@ -406,3 +483,4 @@ window.showCourseDetail = showCourseDetail;
 window.filterCourses = filterCourses;
 window.scrollToTop = scrollToTop;
 window.searchCourses = searchCourses;
+window.enrollInCourse = enrollInCourse;
